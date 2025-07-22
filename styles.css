@@ -7,12 +7,48 @@
 }
 
 table {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
 td,
 th {
-  border: 1px solid #999;
   text-align: start;
-  padding: 0.6rem;
+  padding: 0.8rem 1rem;
+}
+
+/* ### UTILITY CLASS ### */
+
+.numerical {
+  text-align: end;
+}
+
+/* ### GENERAL STYLING ### */
+
+body {
+  font-family: sans-serif;
+}
+
+table {
+  background-color: #f5f7fd;
+  margin-inline: auto;
+  border-radius: 0.8rem;
+  border: 1px solid #dae1f8;
+}
+
+th {
+  border-bottom: 2px solid #dae1f8;
+}
+
+td {
+  border-bottom: 1px solid #dae1f8;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+td.numerical {
+  font-family: monospace;
+  font-size: 1rem;
 }
