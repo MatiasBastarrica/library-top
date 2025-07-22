@@ -1,3 +1,10 @@
+/* ### CUSTOM PROPERTIES ### */
+
+:root {
+  --ff-roboto: "Roboto", sans-serif;
+  --ff-roboto-mono: "Roboto Mono", monospace;
+}
+
 /* ### CSS RESET ### */
 
 * {
@@ -34,8 +41,24 @@ button[type="button"] {
 /* ### GENERAL STYLING ### */
 
 body {
-  font-family: sans-serif;
+  font-family: var(--ff-roboto);
+  font-size: 1.125rem;
 }
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+}
+
+/* ### LIBRARY TABLE ### */
 
 table {
   background-color: #f5f7fd;
@@ -46,10 +69,20 @@ table {
 
 th {
   border-bottom: 2px solid #dae1f8;
+  font-size: 1.235rem;
+  font-weight: 500;
+}
+
+th button[type="button"] {
+  font-size: 1.125rem;
 }
 
 td {
   border-bottom: 1px solid #dae1f8;
+}
+
+caption {
+  margin-bottom: 1rem;
 }
 
 tbody tr:last-child td {
@@ -57,6 +90,6 @@ tbody tr:last-child td {
 }
 
 td.numerical {
-  font-family: monospace;
+  font-family: var(--ff-roboto-mono);
   font-size: 1rem;
 }
