@@ -27,7 +27,7 @@ th {
   padding: 0.8rem 1rem;
 }
 
-button[type="button"] {
+button[type] {
   font-size: inherit;
   padding: 0.4rem 0.8rem;
 }
@@ -92,4 +92,35 @@ tbody tr:last-child td {
 td.numerical {
   font-family: var(--ff-roboto-mono);
   font-size: 1rem;
+}
+
+/* ### DIALOG ### */
+
+dialog {
+  padding: 2rem;
+  margin-inline: auto;
+  width: 350px;
+}
+
+dialog::backdrop {
+  background-color: gray;
+  opacity: 0.3;
+}
+
+dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.325rem;
+}
+
+dialog form input {
+  margin-top: 0.5rem;
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: inherit;
+}
+
+dialog form button {
+  align-self: flex-start;
 }
