@@ -9,12 +9,20 @@
 table {
   border-collapse: separate;
   border-spacing: 0;
+  table-layout: fixed;
+  width: 50%;
+  min-width: 800px;
 }
 
 td,
 th {
   text-align: start;
   padding: 0.8rem 1rem;
+}
+
+button[type="button"] {
+  font-size: inherit;
+  padding: 0.4rem 0.8rem;
 }
 
 /* ### UTILITY CLASS ### */
