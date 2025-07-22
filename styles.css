@@ -98,7 +98,7 @@ td.numerical {
 
 dialog {
   padding: 2rem;
-  margin-inline: auto;
+  margin: auto;
   width: 350px;
 }
 

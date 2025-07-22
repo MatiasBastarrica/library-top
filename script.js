@@ -1,3 +1,10 @@
+const dialog = document.querySelector("dialog");
+const showModalBtn = document.querySelector(".show-modal-btn");
+const closeModalBtn = document.querySelector(".close-modal-btn");
+
+showModalBtn.addEventListener("click", () => dialog.showModal());
+closeModalBtn.addEventListener("click", () => dialog.close());
+
 const myLibrary = [];
 
 function Book(title, author, pages, status) {

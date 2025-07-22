@@ -25,7 +25,9 @@
             <th>Author</th>
             <th class="numerical">Pages</th>
             <th>Status</th>
-            <th><button type="button">Add new book</button></th>
+            <th>
+              <button class="show-modal-btn" type="button">Add new book</button>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -34,32 +36,48 @@
             <td>J.R.R Tolkien</td>
             <td class="numerical">295</td>
             <td>Read</td>
-            <td><button type="button">Update status</button></td>
+            <td>
+              <button type="button" class="update-status-btn">
+                Update status
+              </button>
+            </td>
           </tr>
           <tr>
             <td>Robinson Crusoe</td>
             <td>Daniel Defoe</td>
             <td class="numerical">608</td>
             <td>Not read</td>
-            <td><button type="button">Update status</button></td>
+            <td>
+              <button type="button" class="update-status-btn">
+                Update status
+              </button>
+            </td>
           </tr>
           <tr>
             <td>Treasure Island</td>
             <td>Robert Louis Stevenson</td>
             <td class="numerical">238</td>
             <td>Not read</td>
-            <td><button type="button">Update status</button></td>
+            <td>
+              <button type="button" class="update-status-btn">
+                Update status
+              </button>
+            </td>
           </tr>
           <tr>
             <td>Tom Sawyer</td>
             <td>Mark Twain</td>
             <td class="numerical">274</td>
             <td>Read</td>
-            <td><button type="button">Update status</button></td>
+            <td>
+              <button type="button" class="update-status-btn">
+                Update status
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
-      <dialog open>
+      <dialog>
         <form action="" method="dialog">
           <div>
             <label for="title">Book Title</label>
@@ -77,7 +95,7 @@
             <label for="status">Read status</label>
             <input id="status" type="text" name="status" />
           </div>
-          <button type="submit">Add book</button>
+          <button class="close-modal-btn" type="submit">Add book</button>
         </form>
       </dialog>
       <script src="./script.js"></script>
