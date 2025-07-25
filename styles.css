@@ -24,12 +24,13 @@ table {
 td,
 th {
   text-align: start;
-  padding: 0.8rem 1rem;
+  padding: 0.9rem 1.6rem;
 }
 
 button[type] {
   font-size: inherit;
   padding: 0.4rem 0.8rem;
+  cursor: pointer;
 }
 
 /* ### UTILITY CLASS ### */
@@ -77,6 +78,11 @@ th button[type="button"] {
   font-size: 1.125rem;
 }
 
+th.has-btn,
+td.has-btn {
+  text-align: end;
+}
+
 td {
   border-bottom: 1px solid #dae1f8;
 }
@@ -97,14 +103,31 @@ td.numerical {
 /* ### DIALOG ### */
 
 dialog {
-  padding: 2rem;
+  padding: 3.5rem 2rem 2rem;
   margin: auto;
   width: 350px;
+  position: relative;
 }
 
 dialog::backdrop {
   background-color: gray;
   opacity: 0.3;
+}
+
+dialog .close-btn svg {
+  max-width: 100%;
+}
+
+button.close-btn {
+  padding: 0;
+  border: 0;
+  background-color: inherit;
+  text-align: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 35px;
+  margin-left: auto;
 }
 
 dialog form {
