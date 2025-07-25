@@ -2,7 +2,7 @@
 
 const dialog = document.querySelector("dialog");
 const showModalBtn = document.querySelector(".show-modal-btn");
-const closeModalBtn = document.querySelector(".close-modal-btn");
+const submitModalBtn = document.querySelector(".submit-modal-btn");
 const titleInput = dialog.querySelector("#title");
 const authorInput = dialog.querySelector("#author");
 const pagesInput = dialog.querySelector("#pages");
@@ -136,3 +136,20 @@ function displayBook(book) {
 
   tableBody.appendChild(tableRow);
 }
+
+// ### DIALOG ###
+
+showModalBtn.addEventListener("click", () => dialog.showModal());
+submitModalBtn.addEventListener("click", () => {
+  dialog.close();
+  const title = titleInput.value;
+  const author = authorInput.value;
+  const pages = pagesInput.value;
+  const status = statusInput.value;
+
+  addBookToLibrary(title, author, pages, status);
+  const addedBook = myLibrary[myLibrary.length - 1];
+  displayBook(addedBook);
+});
+
+closeBtn.addEventListener("click", () => dialog.close());
