@@ -1,21 +1,22 @@
+// ### VARIABLES ###
+
 const dialog = document.querySelector("dialog");
 const showModalBtn = document.querySelector(".show-modal-btn");
 const closeModalBtn = document.querySelector(".close-modal-btn");
-
-showModalBtn.addEventListener("click", () => dialog.showModal());
-closeModalBtn.addEventListener("click", () => dialog.close());
-
+const titleInput = dialog.querySelector("#title");
+const authorInput = dialog.querySelector("#author");
+const pagesInput = dialog.querySelector("#pages");
+const statusInput = dialog.querySelector("#status");
+const tableBody = document.querySelector("tbody");
+const closeBtn = document.querySelector(".close-btn");
 const myLibrary = [];
 
-function Book(title, author, pages, status) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.status = status;
-  this.id = randomUUID();
-}
+addBookToLibrary("The Hobbit", "J.R.R Tolkien", 295, "Read");
 
-function addBookToLibrary(title, author, pages, status) {
-  const book = new Book(title, author, pages, status);
-  myLibrary.push(book);
-}
+addBookToLibrary("Robinson Crusoe", "Daniel Defoe", 608, "Not read");
+
+addBookToLibrary("Treasure Island", "Robert Louis Stevenson", 238, "Not read");
+
+addBookToLibrary("Tom Sawyer", "Mark Twain", 274, "Read");
+
+myLibrary.forEach((book) => displayBook(book));
