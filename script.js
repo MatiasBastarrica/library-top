@@ -11,6 +11,16 @@ const tableBody = document.querySelector("tbody");
 const closeBtn = document.querySelector(".close-btn");
 const myLibrary = [];
 
+class Book {
+  constructor(title, author, pages, status) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.status = status;
+    this.id = crypto.randomUUID();
+  }
+}
+
 addBookToLibrary("The Hobbit", "J.R.R Tolkien", 295, "Read");
 
 addBookToLibrary("Robinson Crusoe", "Daniel Defoe", 608, "Not read");
@@ -36,7 +46,7 @@ function createButtonTableData(
   btnContent,
   statusCell,
   tableRowId,
-  tableRow
+  tableRow,
 ) {
   const tableData = createTableData();
   tableData.classList.add("has-btn");
@@ -81,14 +91,6 @@ function createButtonTableData(
   return tableData;
 }
 
-function Book(title, author, pages, status) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.status = status;
-  this.id = crypto.randomUUID();
-}
-
 function addBookToLibrary(title, author, pages, status) {
   const book = new Book(title, author, pages, status);
   myLibrary.push(book);
@@ -121,7 +123,7 @@ function displayBook(book) {
     "Update",
     statusCell,
     tableRowId,
-    tableRow
+    tableRow,
   );
   tableRow.appendChild(updateCell);
 
@@ -130,7 +132,7 @@ function displayBook(book) {
     "Remove",
     statusCell,
     tableRowId,
-    tableRow
+    tableRow,
   );
   tableRow.appendChild(removeCell);
 
