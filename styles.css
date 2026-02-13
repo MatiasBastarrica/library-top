@@ -147,3 +147,7 @@ dialog form input {
 dialog form button {
   align-self: flex-start;
 }
+
+.error-msg {
+  color: lightcoral;
+}

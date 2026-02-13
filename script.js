@@ -142,16 +142,71 @@ function displayBook(book) {
 // ### DIALOG ###
 
 showModalBtn.addEventListener("click", () => dialog.showModal());
-submitModalBtn.addEventListener("click", () => {
-  dialog.close();
-  const title = titleInput.value;
-  const author = authorInput.value;
-  const pages = pagesInput.value;
-  const status = statusInput.value;
+submitModalBtn.addEventListener("click", (e) => {
+  e.preventDefault();
 
-  addBookToLibrary(title, author, pages, status);
-  const addedBook = myLibrary[myLibrary.length - 1];
-  displayBook(addedBook);
+  const inputs = [titleInput, authorInput, pagesInput, statusInput];
+
+  const validity = {
+    title: {
+      valid: false,
+    },
+    author: {
+      valid: false,
+    },
+    pages: {
+      valid: false,
+    },
+    status: {
+      valid: false,
+    },
+  };
+
+  inputs.forEach((input) => {
+    if (!input.value) {
+      if (!input.nextElementSibling) {
+        const errorMsg = document.createElement("div");
+        errorMsg.classList.add("error-msg");
+        errorMsg.textContent = `You should write a ${input.name}.`;
+        input.parentElement.appendChild(errorMsg);
+        // return;
+      }
+    } else {
+      if (input.nextElementSibling) {
+        input.nextElementSibling.remove();
+      }
+      validity[input.name].valid = true;
+    }
+  });
+
+  if (checkValidity(validity)) {
+    const title = titleInput.value;
+    const author = authorInput.value;
+    const pages = pagesInput.value;
+    const status = statusInput.value;
+
+    addBookToLibrary(title, author, pages, status);
+    const addedBook = myLibrary[myLibrary.length - 1];
+    displayBook(addedBook);
+    dialog.close();
+  }
 });
 
 closeBtn.addEventListener("click", () => dialog.close());
+
+function checkValidity(validity) {
+  let result = true;
+  for (const input in validity) {
+    if (!Object.hasOwn(validity, input)) continue;
+
+    const inputValidity = validity[input];
+
+    if (!inputValidity.valid) {
+      result = false;
+      return result;
+    } else {
+      continue;
+    }
+  }
+  return result;
+}
