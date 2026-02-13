@@ -189,6 +189,7 @@ submitModalBtn.addEventListener("click", (e) => {
     const addedBook = myLibrary[myLibrary.length - 1];
     displayBook(addedBook);
     dialog.close();
+    emptyDialog();
   }
 });
 
@@ -209,4 +210,10 @@ function checkValidity(validity) {
     }
   }
   return result;
+}
+
+function emptyDialog() {
+  const allInputs = document.querySelectorAll("input");
+
+  allInputs.forEach((input) => (input.value = ""));
 }
